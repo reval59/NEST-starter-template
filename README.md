@@ -2,6 +2,13 @@
 
 Boilerplate Starter Template using Node.js + Express.js + Swagger + Typescripts
 
+## Dev Env
+
+1. ESLint (Airbnb & Prettier)
+2. Typescript
+3. Swagger
+4. Node.js
+
 ## VS Code Dev Env Config
 
 Install ESLint & Prettier Plugin <br>
