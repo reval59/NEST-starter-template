@@ -1,11 +1,14 @@
 import express from 'express';
+import dotenv from 'dotenv';
+import logger from './middlewares/logger';
+import router from './router';
+
+const envPath = `${__dirname}/../.env`;
+dotenv.config({path : envPath});
+
 const app = express();
-const port = 3000;
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.use(logger);
+app.use(router);
+app.listen(`${process.env.PORT}`, () => {
+  console.log(`${process.env.APP_ID} is running at http://${process.env.HOST}:${process.env.PORT}`);
 });
