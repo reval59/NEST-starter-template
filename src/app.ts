@@ -1,6 +1,8 @@
+// uncomment the below line when deploying
+// import 'module-alias/register'
 import express from 'express';
 import dotenv from 'dotenv';
-import logger from './middlewares/logger';
+import logger from '@middlewares/logger';
 import router from './router';
 
 const envPath = `${__dirname}/../.env`;
