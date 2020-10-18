@@ -1,5 +1,3 @@
-import Joi from 'joi';
-
 export enum FinancialStatus {
   Deficient = 'D',
   Delinquent = 'E',
@@ -32,12 +30,12 @@ export interface NasdaqListing {
   testIssue: TestIssue;
 }
 
-export const nasdaqListingSchema = Joi.object({
-  companyName: Joi.string().required(),
-  financialStatus: Joi.string().valid(Object.values(FinancialStatus)).required(),
-  marketCategory: Joi.string().valid(Object.values(MarketCategory)).required(),
-  roundLotSize: Joi.number().positive().required(),
-  securityName: Joi.string().required(),
-  symbol: Joi.string().required(),
-  testIssue: Joi.string().valid(Object.values(TestIssue)).required(),
-});
+// export const nasdaqListingSchema = Joi.object({
+//   companyName: Joi.string().required(),
+//   financialStatus: Joi.string().valid(Object.values(FinancialStatus)).required(),
+//   marketCategory: Joi.string().valid(Object.values(MarketCategory)).required(),
+//   roundLotSize: Joi.number().positive().required(),
+//   securityName: Joi.string().required(),
+//   symbol: Joi.string().required(),
+//   testIssue: Joi.string().valid(Object.values(TestIssue)).required(),
+// });

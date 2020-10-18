@@ -1,10 +1,14 @@
-import {Router} from 'express';
+import {FastifyPluginCallback} from 'fastify';
+import {AddressInfo} from 'net';
 import NasdaqController from '@controllers/nasdaqController';
 
-const router = Router();
+const router: FastifyPluginCallback = (app, opts, next) => {
+  app.get('/', (req, res)=>{
+    const {address, family, port} = <AddressInfo>app.server.address();
+    res.send(`${process.env.APP_ID} is running in ${family} at ${address}:${port}`);
+  });
+  app.register(NasdaqController, {prefix:'nasdaq'});
+  next();
+};
 
-router.get('/', (req, res)=>{
-  res.send(`${process.env.APP_ID} is running at http://${process.env.HOST}:${process.env.PORT}`);
-});
-router.use('/nasdaq', NasdaqController);
 export default router;

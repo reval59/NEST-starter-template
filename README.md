@@ -1,13 +1,13 @@
-# NEST Starter Template
+# Node Starter Template
 
-Boilerplate Starter Template using Node.js + Express.js + Swagger + Typescripts
+Boilerplate Starter Template using Node.js + Fastify + Swagger + Typescripts
 
 ## Comments
 
 1. Please add <span style="color:red">**.env**</span> file to .gitignore if your repository is public as it is supposed to contain all confidential configurations including DB passwords or API keys
 2. Sample RESTful APIs for [Nasdaq Listings](https://datahub.io/core/nasdaq-listings#resource-nasdaq-listed-symbols) have been implemented for reference
-3. The template relies on [Joi](https://github.com/sideway/joi) for data validation, swagger schema & type generation
-4. For registering custom path aliases with TypeScript in Node.js for deployment, you may refer to [this link](https://levelup.gitconnected.com/path-aliases-with-typescript-in-node-js-230803e3f200)
+3. The template relies on [Fastify](https://www.fastify.io/) rather than [express.js](https://expressjs.com/) for building high performant server-side applications (benchmarks available at [here](https://www.fastify.io/benchmarks/))
+<!-- 4. For registering custom path aliases with TypeScript in Node.js for deployment, you may refer to [this link](https://levelup.gitconnected.com/path-aliases-with-typescript-in-node-js-230803e3f200) -->
 
 
 ## Getting Started

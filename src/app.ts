@@ -1,16 +1,24 @@
-// uncomment the below line when deploying
-// import 'module-alias/register'
-import express from 'express';
+import fastify from 'fastify';
 import dotenv from 'dotenv';
-import logger from '@middlewares/logger';
 import router from './router';
 
 const envPath = `${__dirname}/../.env`;
 dotenv.config({path : envPath});
 
-const app = express();
-app.use(logger);
-app.use(router);
-app.listen(`${process.env.PORT}`, () => {
-  console.log(`${process.env.APP_ID} is running at http://${process.env.HOST}:${process.env.PORT}`);
-});
+const app = fastify({logger:{
+  prettyPrint:true,
+}});
+
+app.register(router);
+
+const start = async () => {
+  try {
+    if (process.env.PORT) {
+      await app.listen(process.env.PORT);
+    } else throw Error(`Port number is not available at ${envPath}`);
+  } catch (err) {
+    app.log.error(err);
+    process.exit(1);
+  }
+};
+start();

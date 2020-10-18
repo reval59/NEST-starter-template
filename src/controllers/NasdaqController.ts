@@ -1,12 +1,21 @@
-import {Router} from 'express';
+import {FastifyPluginCallback} from 'fastify';
 import {readFileAsync} from '@utils/fs';
+import path from 'path';
 
-const router = Router();
-router.get('/', (req, res) => {
-  readFileAsync('../db/nasdaq.json').then((data)=> {
-    console.log(data);
+
+const controller: FastifyPluginCallback = (app, opts, next) => {
+  app.get('/', async (req, res) => {
+    const fpath = path.join(__dirname, '../db/nasdaq.json');
+    const file = await readFileAsync(fpath);
+    try {
+      const nasdaqListing = JSON.parse(<string>file);
+      res.send(nasdaqListing);
+    } catch (err) {
+      req.log.info(err);
+      res.send([]);
+    }
   });
-  res.send('Hello ');
-});
+  next();
+};
 
-export default router;
+export default controller;
