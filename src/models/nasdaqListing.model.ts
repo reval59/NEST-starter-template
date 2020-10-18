@@ -1,5 +1,3 @@
-// import S from 'fluent-schema';
-
 export enum FinancialStatus {
   Deficient = 'D',
   Delinquent = 'E',
@@ -22,7 +20,6 @@ export enum TestIssue {
   No = 'N'
 }
 
-
 export interface NasdaqListing {
   companyName: string;
   financialStatus: FinancialStatus;
@@ -32,15 +29,3 @@ export interface NasdaqListing {
   symbol: string;
   testIssue: TestIssue;
 }
-
-
-// type P = keyof NasdaqListing;
-// type T = {[p in P]:p};
-// const s: T = T
-// S.object
-// S.object().prop(<P>'companyName', S.string().required())
-//   .prop(<P>'financialStatus', S.string().required()
-//     .enum(Object.values(FinancialStatus)))
-//   .prop(<P>'marketCategory', S.string().required()
-//     .enum(Object.values(MarketCategory)))
-//   .prop(<P>'roundLotSize', S.integer().minimum(1)).prop(<P>'securityName', S.);
