@@ -1,4 +1,4 @@
-# Node Starter Template
+# Node.js Starter Template
 
 Boilerplate Starter Template using Node.js + Fastify + Swagger + Typescripts
 
