@@ -4,6 +4,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "no-console":"off"
+    "no-console":"off",
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }]
   }
 }

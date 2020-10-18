@@ -10,7 +10,7 @@
     "strict": true,
     "esModuleInterop": true,
     "allowJs": true,
-    "importHelpers": true,
+    "importHelpers": true
   },
   "exclude": ["node_modules"]
 }
