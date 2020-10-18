@@ -9,7 +9,8 @@ Boilerplate Starter Template using Node.js + Fastify + Swagger + Typescripts
 3. Sample RESTful APIs for [Nasdaq Listings](https://datahub.io/core/nasdaq-listings#resource-nasdaq-listed-symbols) have been implemented for reference
 4. The template relies on [Fastify](https://www.fastify.io/) rather than [express.js](https://expressjs.com/) for building high performant server-side applications (benchmarks available at [here](https://www.fastify.io/benchmarks/))
 <!-- 4. For registering custom path aliases with TypeScript in Node.js for deployment, you may refer to [this link](https://levelup.gitconnected.com/path-aliases-with-typescript-in-node-js-230803e3f200) -->
-
+5. It also uses [JSON schema](https://json-schema.org/understanding-json-schema/) for fast [data validation & serialization](https://www.fastify.io/docs/latest/Validation-and-Serialization/#json-schema-support).
+6. For ease of JSON schema generation with TypeScript, you may visit [here](https://github.com/serafin-labs/schema-builder) or [here](https://transform.tools/json-to-json-schema)
 
 ## Getting Started
 
